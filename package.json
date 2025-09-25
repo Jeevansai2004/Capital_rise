@@ -1,0 +1,54 @@
+{
+  "name": "capital-rise",
+  "version": "1.0.0",
+  "description": "A web-based investment platform with admin and client dashboards",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd client && npm install",
+    "start": "node server/index.js",
+    "postinstall": "cd client && npm install",
+    "db:init": "node server/database/init-database.js",
+    "db:backup": "node server/database/backup-data.js backup",
+    "db:restore": "node server/database/backup-data.js restore",
+    "db:create-admin": "node server/database/create-admin.js"
+  },
+  "keywords": [
+    "investment",
+    "platform",
+    "referral",
+    "dashboard"
+  ],
+  "author": "Capital Rise Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.6.0",
+    "mongodb": "^6.18.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
+    "react-icons": "^5.5.0",
+    "socket.io": "^4.7.4",
+    "sqlite3": "^5.1.6",
+    "twilio": "^5.7.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "mongodb-memory-server": "^10.2.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
