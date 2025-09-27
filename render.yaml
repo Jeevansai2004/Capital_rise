@@ -11,13 +11,29 @@ services:
       - key: PORT
         value: 10000
       - key: MONGO_URI
-        sync: false
+        value: mongodb+srv://saijeevan362:oSAfLeWulTt1r7ZB@capitalrisecluster.fauhhu9.mongodb.net/capital_rise?retryWrites=true&w=majority&appName=CapitalRiseCluster
       - key: MONGO_DB
         value: capital_rise
       - key: JWT_SECRET
-        sync: false
+        value: capital-rise-super-secret-jwt-key-2024
+      - key: SESSION_SECRET
+        value: capital-rise-session-secret-key-2024
+      - key: COOKIE_SECRET
+        value: capital-rise-cookie-secret-key-2024
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_EMAIL
+        value: admin@capitalrise.com
+      - key: ADMIN_PASSWORD
+        value: admin123
       - key: CLIENT_URL
         value: https://capital-rise.onrender.com
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+      - key: LOG_LEVEL
+        value: info
       - key: TWILIO_ACCOUNT_SID
         sync: false
       - key: TWILIO_AUTH_TOKEN
