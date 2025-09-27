@@ -24,7 +24,9 @@ async function connectToDatabase() {
       strict: true,
       deprecationErrors: true,
     } : undefined,
+    // SSL/TLS configuration for Atlas
     tlsAllowInvalidCertificates: allowInsecureTls,
+    tlsAllowInvalidHostnames: allowInsecureTls,
     // Add connection timeout and retry settings for Atlas
     connectTimeoutMS: 30000,
     socketTimeoutMS: 30000,
