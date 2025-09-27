@@ -36,8 +36,6 @@ async function connectToDatabase() {
     maxPoolSize: 10,
     retryWrites: true,
     retryReads: true,
-    // Additional SSL options for better compatibility
-    tlsInsecure: allowInsecureTls,
   });
 
   // For production deployment, only use Atlas - no fallbacks
