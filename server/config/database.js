@@ -24,7 +24,7 @@ async function connectToDatabase() {
       strict: true,
       deprecationErrors: true,
     } : undefined,
-    // SSL/TLS configuration for Atlas
+    // SSL/TLS configuration for Atlas - use more compatible settings
     tlsAllowInvalidCertificates: allowInsecureTls,
     tlsAllowInvalidHostnames: allowInsecureTls,
     // Force SSL/TLS for Atlas connections
@@ -36,6 +36,9 @@ async function connectToDatabase() {
     maxPoolSize: 10,
     retryWrites: true,
     retryReads: true,
+    // Additional options for SSL compatibility
+    authSource: 'admin',
+    authMechanism: 'SCRAM-SHA-1',
   });
 
   // For production deployment, only use Atlas - no fallbacks
