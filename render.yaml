@@ -11,7 +11,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGO_URI
-        value: mongodb+srv://saijeevan362:oSAfLeWulTt1r7ZB@capitalrisecluster.fauhhu9.mongodb.net/capital_rise?retryWrites=true&w=majority&appName=CapitalRiseCluster
+        value: mongodb+srv://saijeevan362:oSAfLeWulTt1r7ZB@capitalrisecluster.fauhhu9.mongodb.net/capital_rise?retryWrites=true&w=majority&appName=CapitalRiseCluster&ssl=true&tlsAllowInvalidCertificates=false&tlsAllowInvalidHostnames=false
       - key: MONGO_DB
         value: capital_rise
       - key: JWT_SECRET

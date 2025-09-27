@@ -27,6 +27,8 @@ async function connectToDatabase() {
     // SSL/TLS configuration for Atlas
     tlsAllowInvalidCertificates: allowInsecureTls,
     tlsAllowInvalidHostnames: allowInsecureTls,
+    // Force SSL/TLS for Atlas connections
+    ssl: connectionString.startsWith('mongodb+srv://'),
     // Add connection timeout and retry settings for Atlas
     connectTimeoutMS: 30000,
     socketTimeoutMS: 30000,
@@ -34,6 +36,8 @@ async function connectToDatabase() {
     maxPoolSize: 10,
     retryWrites: true,
     retryReads: true,
+    // Additional SSL options for better compatibility
+    tlsInsecure: allowInsecureTls,
   });
 
   // For production deployment, only use Atlas - no fallbacks
